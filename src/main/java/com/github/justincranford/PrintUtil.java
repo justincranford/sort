@@ -1,6 +1,8 @@
 package com.github.justincranford;
 
 public class PrintUtil {
+	private PrintUtil() {};
+
 	public static void print(final String message, final int[] arr) {
 		if (null != message) {
 			System.out.println(message);

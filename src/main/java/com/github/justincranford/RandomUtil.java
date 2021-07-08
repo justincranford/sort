@@ -6,6 +6,11 @@ import java.util.Collection;
 
 public class RandomUtil {
 	private static SecureRandom SECURE_RANDOM = new SecureRandom();
+	static {
+		RandomUtil.createarray(1, 1);
+	}
+
+	private RandomUtil() {}
 
 	public static Collection<Integer> createcollection(final int length, final int maxelementvalue) {
 		final Collection<Integer> data = new ArrayList<>(length);

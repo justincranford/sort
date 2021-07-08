@@ -2,27 +2,29 @@ package com.github.justincranford;
 
 import org.junit.jupiter.api.Test;
 
-@SuppressWarnings("static-method")
 public class TestInsertionSortUtil {
+	private static final int MAX_ELEMENT_VALUE = 99;
+//	private static final int MAX_ELEMENT_VALUE = Integer.MAX_VALUE;
+
 	@Test public void testIterativeInsertionSort() {
-		TestInsertionSortUtil.testIterativeInsertionSortHelper(0,  99); // length=0,  maxElement=99
-		TestInsertionSortUtil.testIterativeInsertionSortHelper(1,  99); // length=1,  maxElement=99
-		TestInsertionSortUtil.testIterativeInsertionSortHelper(2,  99); // length=2,  maxElement=99
-		TestInsertionSortUtil.testIterativeInsertionSortHelper(50, 99); // length=50, maxElement=99
+		TestInsertionSortUtil.testIterativeInsertionSortHelper(0,     MAX_ELEMENT_VALUE);
+		TestInsertionSortUtil.testIterativeInsertionSortHelper(1,     MAX_ELEMENT_VALUE);
+		TestInsertionSortUtil.testIterativeInsertionSortHelper(2,     MAX_ELEMENT_VALUE);
+		TestInsertionSortUtil.testIterativeInsertionSortHelper(99999, MAX_ELEMENT_VALUE);
 	}
 
 	@Test public void testPreRecursiveInsertionSort() {
-		TestInsertionSortUtil.testPreRecursiveInsertionSortHelper(0,  99); // length=0,  maxElement=99
-		TestInsertionSortUtil.testPreRecursiveInsertionSortHelper(1,  99); // length=1,  maxElement=99
-		TestInsertionSortUtil.testPreRecursiveInsertionSortHelper(2,  99); // length=2,  maxElement=99
-		TestInsertionSortUtil.testPreRecursiveInsertionSortHelper(50, 99); // length=50, maxElement=99
+		TestInsertionSortUtil.testPreRecursiveInsertionSortHelper(0,   MAX_ELEMENT_VALUE);
+		TestInsertionSortUtil.testPreRecursiveInsertionSortHelper(1,   MAX_ELEMENT_VALUE);
+		TestInsertionSortUtil.testPreRecursiveInsertionSortHelper(2,   MAX_ELEMENT_VALUE);
+		TestInsertionSortUtil.testPreRecursiveInsertionSortHelper(999, MAX_ELEMENT_VALUE); // CAVEAT: Too much recursion => Stack memory overflow
 	}
 
 	@Test public void testRecursiveInsertionSort2() {
-		TestInsertionSortUtil.testPostRecursiveInsertionSortHelper(0,  99); // length=0,  maxElement=99
-		TestInsertionSortUtil.testPostRecursiveInsertionSortHelper(1,  99); // length=1,  maxElement=99
-		TestInsertionSortUtil.testPostRecursiveInsertionSortHelper(2,  99); // length=2,  maxElement=99
-		TestInsertionSortUtil.testPostRecursiveInsertionSortHelper(50, 99); // length=50, maxElement=99
+		TestInsertionSortUtil.testPostRecursiveInsertionSortHelper(0,   MAX_ELEMENT_VALUE);
+		TestInsertionSortUtil.testPostRecursiveInsertionSortHelper(1,   MAX_ELEMENT_VALUE);
+		TestInsertionSortUtil.testPostRecursiveInsertionSortHelper(2,   MAX_ELEMENT_VALUE);
+		TestInsertionSortUtil.testPostRecursiveInsertionSortHelper(999, MAX_ELEMENT_VALUE); // CAVEAT: Too much recursion => Stack memory overflow
 	}
 
 	private static void testIterativeInsertionSortHelper(int length, int maxelementvalue) {
